@@ -1,0 +1,92 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
+    
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+    <div id="webapps" class="step slide" data-x="0" data-y="0">
+        a web of apps!<br/>
+        <br/>
+        <ul>
+        <li><a href="#overview">overview</a>
+        <li><a href="#two">two</a>
+        <li><a href="#three">three</a>
+        <li><a href="#four">four</a>
+    </div>
+
+    <div id="two" class="step slide" data-x="1000" data-y="0">
+        two
+    </div>
+
+    <div id="three" class="step slide" data-x="3000" data-y="0" data-scale="5" >
+        three
+    </div>
+
+    <div id="four" class="step slide" data-x="4000" data-y="0" data-rotate="30" >
+        four
+    </div>
+
+    <div id="tiny" class="step slide slab" data-x="2000" data-y="1000" data-z="-3000" >
+        more detail
+    </div>
+
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    </div>
+
+</div>
+
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<script src="js/impress.js"></script>
+<script>impress();</script>
+
+<!--
+    
+    The `impress()` function also gives you access to API to control the presentation.
+    
+    Just store the result of the call:
+    
+        var api = impress();
+    
+    and you will get three functions you can call:
+    
+        `api.next()` - moves to next step of the presentation,
+        `api.prev()` - moves to previous step of the presentation
+        `api.goto( stepElement ) - moves the presentation to given step element (the DOM element of the step).
+    
+    You can also simply call `impress()` again to get the API, so `impress().next()` is also allowed.
+    Don't worry, it wont initialize the presentation again.
+    
+    For some example uses of this API check the last part of the source of impress.js where the API
+    is used in event handlers.
+    
+-->
+
+</body>
+</html>
